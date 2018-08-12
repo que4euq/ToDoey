@@ -48,8 +48,13 @@ class ToDoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let item = itemArray[indexPath.row]
-
         item.done = !item.done
+
+        // call context delete first
+//        context.delete(itemArray[indexPath.row])
+//        itemArray.remove(at: indexPath.row)
+
+        
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
         saveItems()
